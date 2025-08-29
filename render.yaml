@@ -2,5 +2,7 @@ services:
   - type: web
     name: marvelcdb
     env: php
-    buildCommand: "composer install --no-dev"
-    startCommand: "php artisan serve --host 0.0.0.0 --port 10000"
+    phpVersion: 8.1
+    buildCommand: "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev"
+    startCommand: "php artisan serve --host 0.0.0.0 --port $PORT"
+
